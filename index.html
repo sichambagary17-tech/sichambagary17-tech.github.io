@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>KINGDOM KNOWLEDGE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+    :root {
+        --bg: #0f172a;        /* dark background */
+        --box: #1e293b;       /* dark box */
+        --text: #f8fafc;      /* dark text */
+        --accent: #38bdf8;    /* dark accent */
+    }
+    [data-theme="light"] {
+        --bg: #f1f5f9;        /* light background */
+        --box: #ffffff;       /* light box */
+        --text: #0f172a;      /* light text */
+        --accent: #0284c7;    /* light accent */
+    }
+    .glitch:hover {
+    animation: glitch 0.3s;
+}
+@keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+}
+
+    <script>
+    const text = "Hello, Welcome To KINGDOM KNOWLEDGE! 🚀";
+    let i = 0;
+    function type() {
+        if (i < text.length) {
+            document.getElementById("typing").innerHTML += text.charAt(i);
+            i++;
+            setTimeout(type, 70);
+        }
+    }
+    <script>
+    const boxes = document.querySelectorAll('.box');
+    function checkScroll() {
+        boxes.forEach(box => {
+            const top = box.getBoundingClientRect().top;
+            if (top < window.innerHeight - 100) {
+                box.classList.add('show');
+            }
+        });
+    }
+    window.addEventListener('scroll', checkScroll);
+    checkScroll(); // run once on load
+</script>
+    type();
+    </script>
+
+    body {
+        background-color: var(--bg);
+        color: var(--text);
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 20px;
+        margin: 0;
+        transition: 0.3s; /* smooth color change */
+    }
+    h1, h2 { color: var(--accent); }
+    .box {
+        background-color: var(--box);
+        padding: 25px;
+        border-radius: 15px;
+        margin: 30px auto;
+        width: 90%; /* better for phone */
+        max-width: 600px;
+        transition: 0.3s;
+    }
+    img {
+        width: 90%;
+        max-width: 300px;
+        border-radius: 15px;
+        margin: 20px 0;
+        border: 3px solid var(--accent);
+    }
+    a { color: var(--accent); text-decoration: none; font-weight: bold; margin: 0 10px; }
+    input, textarea {
+        width: 90%;
+        padding: 10px;
+        border-radius: 8px;
+        border: none;
+        margin: 8px 0;
+        background-color: var(--box);
+        color: var(--text);
+        border: 1px solid var(--accent);
+    }
+    button {
+        background-color: var(--accent);
+        color: var(--bg);
+        border: none;
+        padding: 12px 24px;
+        border-radius: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        font-weight: bold;
+        margin: 5px;
+    }
+    footer { margin-top: 50px; padding: 20px; color: var(--accent); font-size: 14px; }
+    /* 1. Title fades in from top */
+h1 {
+    animation: fadeDown 1.2s ease-out;
+}
+
+/* 2. Boxes slide up one by one */
+.box {
+    animation: slideUp 0.8s ease-out;
+    animation-fill-mode: both; /* keeps it visible after animating */
+}
+.box:nth-child(2) { animation-delay: 0.2s; }
+.box:nth-child(3) { animation-delay: 0.4s; }
+.box:nth-child(4) { animation-delay: 0.6s; }
+.box:nth-child(5) { animation-delay: 0.8s; }
+
+/* 3. Button hover effect */
+button {
+    transition: 0.2s;
+}
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--accent);
+}
+
+/* 4. Image hover zoom */
+img {
+    transition: 0.3s;
+}
+img:hover {
+    transform: scale(1.03);
+}
+
+/* KEYFRAMES - the actual animations */
+@keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.box {
+    opacity: 0; /* start hidden */
+    transform: translateY(40px);
+    transition: 0.8s ease-out;
+}
+.box.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+.glitch:hover {
+    animation: glitch 0.3s;
+}
+@keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+}
+
+</style>
+</head>
+<script>
+    // Create a beep sound using the browser itself - no file needed
+    function playClick() {
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        const oscillator = audioCtx.createOscillator();
+        const gainNode = audioCtx.createGain();
+        
+        oscillator.connect(gainNode);
+        gainNode.connect(audioCtx.destination);
+        
+        oscillator.type = 'square'; // robot beep sound
+        oscillator.frequency.value = 800; // pitch
+        gainNode.gain.value = 0.1; // volume
+        
+        oscillator.start();
+        oscillator.stop(audioCtx.currentTime + 0.08); // 0.08s beep
+    }
+
+    document.querySelectorAll('button').forEach(btn => {
+        btn.addEventListener('click', playClick);
+    });
+</script>
+<body>
+    <h1 id="typing"></h1>
+    <button onclick="toggleTheme()">🌙 / ☀️ Toggle Theme</button>
+
+    <!-- THIS IS YOUR ROBOT ARM PIC -->
+    <img src="Only Believe.jpg" alt="Our Moto">
+     <img src="Only1 (2).png" alt="Our Moto">
+      <img src="Only1 (1).png" alt="Our Moto">
+       <img src="Only1 (3).png" alt="Our Moto">
+        <img src="Only1 (5).png" alt="Our Moto">
+         <img src="Only1 (4).png" alt="Our Moto">
+
+    <div class="box">
+        <h2>About Us</h2>
+        <p> Sharing The True Gospel of The kingdom of God,  
+        Our goal: Changing Mindsets With The True Gospel.</p>
+    </div>
+
+    </div class="box">
+        <h2>10 Common Questions</h2>
+        <p><br>1.What is Sin? Sin is the transgression of the law (the Word of God), Therefore sin is disobeying the Voice of God.
+            The commandment of God is to Believe in Jesus, Therefore, Sin is not believing in Jesus.<br>
+
+           <br>2.How did Sin enter the world? When The woman decided to listen to another voice rather than the voice of God.
+           Therefore through one man all have sinned as long as they are Born from a human being.<br>
+
+           <br>3.What is Knowledge of Good and Evil? This is the mindset that man took when he sinned. The ability to decide what is good and evil
+according to his own sight.<br>
+
+           <br>4.What happened between Adam and Moses? Death reigned even without the law of Moses  by the same sin given to every man from Adam.<br>
+
+           <br>5.What is the law? This is the commandment that God gave in the old testament. There are 613 laws in total and they that want to keep them must keep all of them, all the time.<br>
+
+           <br>6.What is the Purpose of the law? To bring the realisation of Sin to Those who Think can be righteous throgh their efforts. to show all people that they are sinner and are guilty before God no matter what they do.<br>
+
+           <br>7.What kind of People Did God give the Law to? The law is given to sinners who have the seed of disobience, thise who cannot keep it to show them that they cannot please God with there efforts.<br>
+        
+           <br>8.What is Salvation? To be saved from sin which leads to eternal death.<br>
+
+        <br>9.How to Get Saved? Salvation is 100% the work of the savior and 0% the work of the one being saved. A prisoner cannot set himself free no matter the effort.
+           Only by believing: Since we cannot save ourselves, we can only believe in Jesus who can save us.
+
+           Since we cannot keep the law, we can only believe in Him who kept it. 
+
+           Since we cannot die for ourselves (because we are already destined for death), we can only believe in Him who already died for the world.
+
+           A man is saved or condenmed not through his actions but by what he believes.
+
+           THEREFORE SALVATION ONLY COMES FROM BELIEVING THAT JESUS TOOK OUR SIN OF YESTERDAY, TODAY AND FOREVER, ONCE AND FOR ALL.<br>
+
+          <br> 10.How to live after Salvation? By occupying yourself by the things of the Spirit so that you should not be occupied by the things of the flesh
+           What you do after salvation does not affect your salvation, it only affects your physical life, be it good or bad in your eyes.<br>
+        </p>
+
+    <div class="box">
+        <h2>What we Do</h2>
+        <p>• Daily bible study at 19:30hrs<br>• Online Bible Q&A anytime<br>• Free Tuitions at 18:30hrs</p>
+    </div>
+
+    <button onclick="alert('Contact Us On 0975132883, 0768552937 or visit our facebook page KINGDOM KNOWLEDGE')">
+        For More Questions Click Here
+    </button>
+<script>
+    function toggleTheme() {
+        const body = document.body;
+        if (body.getAttribute('data-theme') === 'light') {
+            body.setAttribute('data-theme', 'dark');
+        } else {
+            body.setAttribute('data-theme', 'light');
+        }
+    }
+</script>
+</body>
+</html>
