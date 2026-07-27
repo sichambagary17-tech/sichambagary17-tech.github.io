@@ -168,6 +168,16 @@ img:hover {
 
 </style>
 </head>
+ <script>
+    const text = "Hello, Welcome To KINGDOM KNOWLEDGE! 🚀";
+    let i = 0;
+    function type() {
+        if (i < text.length) {
+            document.getElementById("typing").innerHTML += text.charAt(i);
+            i++;
+            setTimeout(type, 70);
+        }
+    }
 <script>
     // Create a beep sound using the browser itself - no file needed
     function playClick() {
