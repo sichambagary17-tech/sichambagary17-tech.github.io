@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
     :root {
-        --bg: #0f172a;        /* dark background */
+        --bg: #f2f4f7;        /* dark background */
         --box: #1e293b;       /* dark box */
-        --text: #f8fafc;      /* dark text */
+        --text: #2463a3;      /* dark text */
         --accent: #38bdf8;    /* dark accent */
     }
     [data-theme="light"] {
-        --bg: #f1f5f9;        /* light background */
-        --box: #ffffff;       /* light box */
-        --text: #0f172a;      /* light text */
-        --accent: #0284c7;    /* light accent */
+        --bg: #26507a;        /* light background */
+        --box: #f3f3f7;       /* light box */
+        --text: #0d0d0e;      /* light text */
+        --accent: #0f88c5;    /* light accent */
     }
     .glitch:hover {
     animation: glitch 0.3s;
@@ -28,31 +28,7 @@
     100% { transform: translate(0); }
 }
 
-    <script>
-    const text = "Hello, Welcome To KINGDOM KNOWLEDGE! 🚀";
-    let i = 0;
-    function type() {
-        if (i < text.length) {
-            document.getElementById("typing").innerHTML += text.charAt(i);
-            i++;
-            setTimeout(type, 70);
-        }
-    }
-    <script>
-    const boxes = document.querySelectorAll('.box');
-    function checkScroll() {
-        boxes.forEach(box => {
-            const top = box.getBoundingClientRect().top;
-            if (top < window.innerHeight - 100) {
-                box.classList.add('show');
-            }
-        });
-    }
-    window.addEventListener('scroll', checkScroll);
-    checkScroll(); // run once on load
-    </script>
-    type();
-    </script>
+    
 
     body {
         background-color: var(--bg);
@@ -84,8 +60,8 @@
     input, textarea {
         width: 90%;
         padding: 10px;
-        border-radius: 8px;
-        border: none;
+        border-radius: 8px;  
+        border: line;
         margin: 8px 0;
         background-color: var(--box);
         color: var(--text);
@@ -105,7 +81,7 @@
     footer { margin-top: 50px; padding: 20px; color: var(--accent); font-size: 14px; }
     /* 1. Title fades in from top */
 h1 {
-    animation: fadeDown 1.2s ease-out;
+    animation: fadeDown 1.4s ease-out;
 }
 
 /* 2. Boxes slide up one by one */
@@ -120,7 +96,7 @@ h1 {
 
 /* 3. Button hover effect */
 button {
-    transition: 0.2s;
+    transition: 0.4s;
 }
 button:hover {
     transform: scale(1.05);
@@ -167,63 +143,30 @@ img:hover {
 }
 
 </style>
-</head>
- <script>
-    const text = "Hello, Welcome To KINGDOM KNOWLEDGE! 🚀";
-    let i = 0;
-    function type() {
-        if (i < text.length) {
-            document.getElementById("typing").innerHTML += text.charAt(i);
-            i++;
-            setTimeout(type, 70);
-        }
-    }
-<script>
-    // Create a beep sound using the browser itself - no file needed
-    function playClick() {
-        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-        const oscillator = audioCtx.createOscillator();
-        const gainNode = audioCtx.createGain();
-        
-        oscillator.connect(gainNode);
-        gainNode.connect(audioCtx.destination);
-        
-        oscillator.type = 'square'; // robot beep sound
-        oscillator.frequency.value = 800; // pitch
-        gainNode.gain.value = 0.1; // volume
-        
-        oscillator.start();
-        oscillator.stop(audioCtx.currentTime + 0.08); // 0.08s beep
-    }
 
-    document.querySelectorAll('button').forEach(btn => {
-        btn.addEventListener('click', playClick);
-    });
-</script>
 <body>
-    <body>
-        <h1>Welcome to Kingdom Knowledge</h1>
+        <h1>Hello, Welcome to Kingdom Knowledge! 🚀</h1>
         <p>
-Here you can learn about the begining and the end of faith even salvation given to us freely by our Lord Jesus Christ.</p><p></p> Below are the 10 most commonly asked questions about salvation and the reality of going to heaven or hell, feel free to learn and enquire.</p>
+Here you can learn about the begining and the end of faith even salvation, which is given to us freely by our Lord Jesus Christ.</p><p></p> Below are the 10 most commonly asked questions about salvation and Some Christian Books, feel free to read and download.</p>
         
         <!-- your existing contrast button and contact info goes below -->
-    </body>
+    
     <h1 id="typing"></h1>
-    <button onclick="toggleTheme()">🌙 / ☀️ Toggle Theme</button>
+    <button onclick="toggleThem()">🌙 / ☀️ Dark Mode</button>    
 
     <!-- THIS IS YOUR ROBOT ARM PIC -->
     <img src="Only Believe.jpg" alt="Our Moto">
         
-         <img src="Only1 (4).png" alt="Our Moto">
+     <img src="Only1 (4).png" alt="Our Moto">
 
     <div class="box">
         <h2>About Us</h2>
         <p> Sharing The True Gospel of The kingdom of God,  
         Our goal: Changing Mindsets With The True Gospel.</p>
     </div>
-    <img src="Only1 (5).png" alt="Our Moto">
+                      <img src="Only1 (5).png" alt="Our Moto">
 
-    </div class="box">
+    <div class="box">
         <h2>10 Common Questions</h2>
         <p><br>1.What is Sin? Sin is the transgression of the law (the Word of God), Therefore sin is disobeying the Voice of God.
             The commandment of God is to Believe in Jesus, Therefore, Sin is not believing in Jesus. john 16:8-9<br>
@@ -255,20 +198,61 @@ according to his own sight. Genesis 3:5-6<br>
 
            THEREFORE SALVATION ONLY COMES FROM BELIEVING THAT JESUS TOOK OUR SIN OF YESTERDAY, TODAY AND FOREVER, ONCE AND FOR ALL. John 3:15-18, 36<br>
 
-          <br> 10.How to live after Salvation? By occupying yourself by the things of the Spirit so that you should not be occupied by the things of the flesh
+          <br> 10.How to live after Salvation? By occupying yourself with the things of the Spirit so that you should not be occupied by the things of the flesh
            What you do after salvation does not affect your salvation, it only affects your physical life, be it good or bad in your eyes. Galatians 5:16<br>
         </p>
+    </div>
+    <div class="box">
+    
+        <h1>Christian Books</h1>
+        <p>Feel  free to download and read</p>
+
+        <p><a href="pdfs/The theology of martin luther.pdf" download>
+            1.The theology of martin luther
+        </a></p>
+        <p><a href="pdfs/Law.pdf" download>
+            2.Law
+        </a></p>
+        <p><a href="pdfs/Bible Hermeneutics.pdf" download>
+            3.Bible Hermeneumetics
+        </a></p>
+        <p><a href="pdfs/TABERNACLE.pdf" download>
+            4.TABERNACLE 
+        </a></p>
+        <p><a href="pdfs/The Secret of Power in Prayer (Spurgeon, Charles H. [Spurgeon, Charles H.]) (z-library.sk, 1lib.sk, z-lib.sk).pdf" download>
+            5.The Secret of power in prayer
+        </a></p>
+        <p><a href="pdfs/The Necessity of Prayer (E. M. Bounds [Bounds, E. M.]) (z-library.sk, 1lib.sk, z-lib.sk).pdf" download>
+            6.The Necessity of prayer
+        </a></p>
+        <p><a href="pdfs/Quiet times with D.L. Moody (Moody, Dwight Lyman, 1837-1899, Bell etc.) (z-library.sk, 1lib.sk, z-lib.sk).pdf" download>
+            7.Quiet times with D.L. Moody
+        </a></p>
+        <p><a href="pdfs/Men of the Bible (Dwight Lyman Moody) (z-library.sk, 1lib.sk, z-lib.sk).pdf" download>
+            8.Men of the Bible D.L Moody
+        </a></p>
+        <p><a href="pdfs/Complete Works of E. M. Bounds on Prayer [Annotated] (E. M. Bounds [Bounds, E. M.]) (z-library.sk, 1lib.sk, z-lib.sk).pdf" download>
+            9.Prayer Books E.M Bounds
+        </a></p>
+        <p><a href="pdfs/D.L. Moody on the Ten Commandments (Moody, Dwight Lyman, 1837-1899) (z-library.sk, 1lib.sk, z-lib.sk).pdf" download>
+            10.D.L. Moody on the Ten Commandments
+        </a></p>
+        <p>For More Content, Contact Us.</p>
+    
+    </div>
 <img src="Only1 (2).png" alt="Our Moto">
+ <img src="Only Believe.jpg" alt="Our Moto">
     <div class="box">
         <h2>What we Do</h2>
         <p>• Daily bible study at 19:30hrs<br>• Online Bible Q&A anytime<br>• Free Tuitions at 18:30hrs</p>
     </div>
 <img src="Only1 (3).png" alt="Our Moto">
+
     <button onclick="alert('Contact Us On 0975132883, 0768552937 or visit our facebook page KINGDOM KNOWLEDGE')">
-        For More Questions Click Here
+        For More Information Click Here
     </button>
 <script>
-    function toggleTheme() {
+    function toggleThem() {
         const body = document.body;
         if (body.getAttribute('data-theme') === 'light') {
             body.setAttribute('data-theme', 'dark');
